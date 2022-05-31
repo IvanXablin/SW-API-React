@@ -1,16 +1,15 @@
 import React from 'react';
-// @ts-ignore
-import classes from './PlanetItem.module.css';
+import {IPlanet} from "../../types/IPlanet";
+import styles from './PlanetItem.module.css';
 
 interface PlanetItemProps {
-    name: string;
-    image?: string;
+    planet: IPlanet;
 }
 
-export default function PlanetItem({name, image} : PlanetItemProps) {
+export default function PlanetItem({planet} : PlanetItemProps) {
     return (
-        <div className={classes.content}>
-            <p>{name}</p>
+        <div className={styles.contentItem}>
+            <p>{planet.name}</p>
         </div>
     )
 }

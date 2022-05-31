@@ -1,15 +1,20 @@
 import React from 'react';
+import {IPlanet} from "../../types/IPlanet";
+import PlanetItem from "./PlanetItem";
+import styles from './PlanetList.module.css';
 
 interface PlanetListProps {
-    arrayPlanets: [];
+    arrayPlanets: IPlanet[];
 }
 
-export default function PlanetList ({arrayPlanets} : PlanetListProps) {
+function PlanetList ({arrayPlanets} : PlanetListProps) {
     return (
-        <div>
-            {arrayPlanets.map(i =>
-                <p>{i}</p>
+        <div className={styles.content}>
+            {arrayPlanets.map(planet =>
+                <PlanetItem planet={planet}/>
             )}
         </div>
     )
 }
+
+export default PlanetList
