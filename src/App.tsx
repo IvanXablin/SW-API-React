@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import PlanetList from "./components/Planet/PlanetList";
+import PlanetList from "./components/Planet/PlanetList/PlanetList";
 import {IPlanet} from "./types/IPlanet";
 import AxiosService from "./api/AxiosService";
 import {getPagesArray, getPagesCount} from "./utils/pages";
+import {AboutPlanet} from "./components/Planet/AboutPlanet/AboutPlanet";
 
 
 function App() {
@@ -31,13 +32,12 @@ function App() {
 
     function changePage(page:number) {
         setPage(page);
+        //{//isLoading ? <img src={require('./assets/load.gif')} alt="loading..."/> : <PlanetList arrayPlanets={planets}/>}
     }
 
   return (
     <div className="App">
         <h1>Star Wars Planet Info</h1>
-
-        {isLoading ? <img src={require('./assets/load.gif')} alt="loading..."/> : <PlanetList arrayPlanets={planets}/>}
 
         <div style={{textAlign: 'center'}}>
             {pagesArray.map(page =>

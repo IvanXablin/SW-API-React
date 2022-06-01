@@ -1,6 +1,6 @@
 import React from 'react';
-import {IPlanet} from "../../types/IPlanet";
-import PlanetItem from "./PlanetItem";
+import {IPlanet} from "../../../types/IPlanet";
+import PlanetItem from "../PlanetItem/PlanetItem";
 import styles from './PlanetList.module.css';
 
 interface PlanetListProps {

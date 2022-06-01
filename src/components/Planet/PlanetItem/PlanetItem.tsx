@@ -1,5 +1,5 @@
 import React from 'react';
-import {IPlanet} from "../../types/IPlanet";
+import {IPlanet} from "../../../types/IPlanet";
 import styles from './PlanetItem.module.css';
 
 interface PlanetItemProps {
