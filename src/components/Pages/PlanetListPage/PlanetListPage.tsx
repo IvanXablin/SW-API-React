@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {IPlanet} from "../../types/IPlanet";
-import AxiosService from "../../api/AxiosService";
-import {getPagesArray, getPagesCount} from "../../utils/pages";
-import PlanetList from "../Planet/PlanetList/PlanetList";
-import styles from "./Planets.module.css"
+import {IPlanet} from "../../../types/IPlanet";
+import AxiosService from "../../../api/AxiosService";
+import {getPagesArray, getPagesCount} from "../../../utils/pages";
+import PlanetList from "../../Planet/PlanetList/PlanetList";
+import styles from "./PlanetListPage.module.css"
 
-export default function Planets() {
+export default function PlanetListPage() {
 
     const [planets, setPlanets] = useState<IPlanet[]>([]);
     const [totalPages, setTotalPages] = useState(0);
@@ -45,7 +45,7 @@ export default function Planets() {
                 )}
             </div>
 
-            {isLoading ? <img src={require('../../assets/load.gif')} alt="loading..." className={styles.loader}/> : <PlanetList arrayPlanets={planets}/>}
+            {isLoading ? <img src={require('../../../assets/load.gif')} alt="loading..." className={styles.loader}/> : <PlanetList arrayPlanets={planets}/>}
         </div>
     );
 }

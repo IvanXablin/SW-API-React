@@ -8,7 +8,7 @@ type PlanetItemPageParams = {
     id: string;
 }
 
-export default function PlanetItemPage() {
+export default function PlanetAboutPage() {
 
     const [planet, setPlanet] = useState<IPlanet | null >(null);
     const [people, setPeople] = useState<IPeople[]>([]);
