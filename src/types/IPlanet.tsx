@@ -6,4 +6,5 @@ export interface IPlanet{
     terrain?: string;
     population?: string;
     residents?: [];
+    url: string;
 }
