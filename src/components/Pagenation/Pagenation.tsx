@@ -6,17 +6,9 @@ interface PagenationProps {
 }
 
 export function Pagenation({pagesArray, setPage} : PagenationProps) {
-
-    // function changePage(page:number) {
-     //   setPage(page);
-   // }
-
-   // return (
-        //{pagesArray.map((page: number) =>
-             //   <button
-            //        key={page}
-            //        onClick={() => changePage(page)}
-           //     >{page}</button>
-        //    )}
-   // );
+    return (
+        <div>
+            Test
+        </div>
+    );
 }

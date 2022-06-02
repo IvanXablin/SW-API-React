@@ -14,7 +14,7 @@ function PlanetList ({arrayPlanets} : PlanetListProps) {
                 <PlanetItem planet={planet}/>
             )}
         </div>
-    )
+    );
 }
 
 export default PlanetList

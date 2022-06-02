@@ -1,9 +1,9 @@
 export interface IPeople {
-    name: string;
-    height: string;
-    mass: string;
-    hairColor: string;
-    skinColor: string;
-    eyeColor: string;
-    gender: string
+    name?: string;
+    height?: string;
+    mass?: string;
+    hairColor?: string;
+    skinColor?: string;
+    eyeColor?: string;
+    gender?: string;
 }

@@ -9,8 +9,9 @@ interface PlanetItemProps {
 export default function PlanetItem({planet} : PlanetItemProps) {
     return (
         <div className={styles.contentItem}>
-            <p>{planet.name}</p>
+            <h1>{planet.name}</h1>
+            <button className={styles.btnInfo}>Show Info</button>
         </div>
-    )
+    );
 }
 

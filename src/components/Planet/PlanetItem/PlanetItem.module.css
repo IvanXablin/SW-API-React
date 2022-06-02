@@ -8,8 +8,15 @@
     display: inline-block;
 }
 
-
-.contentItem:hover {
-
+.btnInfo {
+    border: 1px yellow solid;
+    background: transparent;
+    font-size: 20px;
+    color: white;
 }
+.btnInfo:hover {
+    color: crimson;
+}
+
+
 
