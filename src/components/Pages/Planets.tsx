@@ -35,9 +35,7 @@ export default function Planets() {
         <div className="App">
             <h1 className={styles.header}>Star Wars Planet Info</h1>
 
-            {isLoading ? <img src={require('../../assets/load.gif')} alt="loading..." className={styles.loader}/> : <PlanetList arrayPlanets={planets}/>}
-
-            <div style={{textAlign: 'center'}}>
+            <div style={{textAlign: 'right'}}>
                 {pagesArray.map(page =>
                     <button
                         style={{fontSize: '24px', marginLeft: '10px'}}
@@ -46,6 +44,8 @@ export default function Planets() {
                     >{page}</button>
                 )}
             </div>
+
+            {isLoading ? <img src={require('../../assets/load.gif')} alt="loading..." className={styles.loader}/> : <PlanetList arrayPlanets={planets}/>}
         </div>
     );
 }

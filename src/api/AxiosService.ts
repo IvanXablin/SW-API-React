@@ -12,8 +12,13 @@ export default class AxiosService {
         return await axios.get<IPlanet>(`https://swapi.dev/api/planets/${index}`);
     }
 
-    async getPeople(path: string) {
-        return await axios.get<IPeople>(path);
+    async getPeople(path: []) {
+        let peopleArray:IPeople[] = [];
+        for (let p of path) {
+            let people = await axios.get<IPeople>(p);
+            peopleArray.push(people.data);
+        }
+        console.log(peopleArray);
+        return peopleArray;
     }
-
 }
