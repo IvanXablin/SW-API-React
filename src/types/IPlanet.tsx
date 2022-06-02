@@ -5,5 +5,5 @@ export interface IPlanet{
     gravity?: string;
     terrain?: string;
     population?: string;
-    image?: string;
+    residents?: [];
 }

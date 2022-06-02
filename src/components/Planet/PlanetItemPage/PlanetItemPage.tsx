@@ -1,34 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {IPlanet} from "../../../types/IPlanet";
-import {IPeople} from "../../../types/IPeople";
+import {useParams} from "react-router-dom";
+import AxiosService from "../../../api/AxiosService";
 
-interface AboutPlanetProps {
-    planet: IPlanet;
-    people: IPeople[];
+type PlanetItemPageParams = {
+    id: string;
 }
 
-export default function PlanetItemPage({planet, people} : AboutPlanetProps) {
+export default function PlanetItemPage() {
+
+    const [planet, setPlanet] = useState<IPlanet | null >(null);
+    const params = useParams<PlanetItemPageParams>();
+    const as = new AxiosService();
+
+    useEffect(() => {
+        fetchPlanet();
+    }, []);
+
+    async function fetchPlanet() {
+        const res = await as.getPlanet(params.id);
+        setPlanet(res.data);
+    }
+
     return (
         <div>
             <div>
-                <p>Name: {planet.name}</p>
-                <p>Diameter: {planet.diameter}</p>
-                <p>Climate: {planet.climate}</p>
-                <p>Gravity: {planet.gravity}</p>
-                <p>Terrain: {planet.terrain}</p>
-                <p>Population: {planet.population}</p>
-
-                {people.map(i =>
-                    <div>
-                        <p>i.name</p>
-                        <p>i.height</p>
-                        <p>i.mass</p>
-                        <p>i.hairColor</p>
-                        <p>i.skinColor</p>
-                        <p>i.eyeColor</p>
-                        <p>i.gender</p>
-                    </div>
-                )}
+                <h3>{planet?.name}</h3>
+                <p>{planet?.climate}</p>
+                <p>{planet?.diameter}</p>
+                <p>{planet?.gravity}</p>
+                <p>{planet?.terrain}</p>
+                <p>{planet?.population}</p>
             </div>
         </div>
     );
