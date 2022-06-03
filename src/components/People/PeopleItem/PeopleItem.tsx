@@ -9,12 +9,14 @@ interface PeopleItemProps {
 export default function PeopleItem({people} : PeopleItemProps) {
     return (
         <div className={styles.content}>
-            <p>{people.name }</p>
-            <span>Gender: {people.gender} </span>
-            <span>Height: {people.height} </span>
-            <span>Mass: {people.mass} </span>
-            <span>Hair color: {people.hair_color} </span>
-            <span>Skin color: {people.skin_color} </span>
+            <div className={styles.contentItem}>
+                <h3>{people.name }</h3>
+                <p>Gender: {people.gender} </p>
+                <p>Height: {people.height} </p>
+                <p>Mass: {people.mass} </p>
+                <p>Hair color: {people.hair_color} </p>
+                <p>Skin color: {people.skin_color} </p>
+            </div>
         </div>
     );
 }

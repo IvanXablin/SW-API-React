@@ -1,0 +1,12 @@
+.Select {
+    width: 200px;
+    border: 2px solid gold;
+    border-radius: 5px;
+    background: transparent;
+    color: white;
+}
+
+
+option {
+    color: black;
+}

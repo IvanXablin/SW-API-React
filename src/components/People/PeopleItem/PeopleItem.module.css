@@ -1,3 +1,22 @@
 .content {
     color: white;
 }
+
+.contentItem {
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px 10px;
+    border: 1px solid gold;
+    border-radius: 20px;
+    background: #262525;
+}
+
+h3 {
+    padding-left: 10px;
+}
+
+p {
+    color: gold;
+    padding-left: 10px;
+    margin-top: 3px;
+}

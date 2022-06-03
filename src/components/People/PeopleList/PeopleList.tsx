@@ -1,6 +1,7 @@
 import React from 'react'
 import {IPeople} from "../../../types/IPeople";
 import PeopleItem from "../PeopleItem/PeopleItem";
+import styles from './PeopleList.module.css';
 
 interface PeopleListProps {
     people: IPeople[];
@@ -8,7 +9,7 @@ interface PeopleListProps {
 
 export default function PeopleList({people} : PeopleListProps) {
     return (
-        <div>
+        <div className={styles.contentPeople}>
             {people.map(p =>
                 <PeopleItem people={p}/>
             )}
