@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import {IPlanet} from "../../../types/IPlanet";
+import {IPlanet} from "../../types/IPlanet";
 import {useParams} from "react-router-dom";
-import AxiosService from "../../../api/AxiosService";
-import {IPeople} from "../../../types/IPeople";
+import AxiosService from "../../api/AxiosService";
+import {IPeople} from "../../types/IPeople";
+import PeopleList from "../../components/People/PeopleList/PeopleList";
+import useFetching from "../../utils/useFetch";
+import Loader from "../../components/Loader/Loader";
 
 type PlanetItemPageParams = {
     id: string;
@@ -12,19 +15,20 @@ export default function PlanetAboutPage() {
 
     const [planet, setPlanet] = useState<IPlanet | null >(null);
     const [people, setPeople] = useState<IPeople[]>([]);
+    const [isLoading, setIsLoading] = useState(true);
     const params = useParams<PlanetItemPageParams>();
     const as = new AxiosService();
 
-    useEffect(() => {
+    useEffect( () => {
+        fetchPeople()
         fetchPlanet();
-        fetchPeople();
-    }, []);
+    }, [isLoading]);
 
     async function fetchPlanet() {
         const res = await as.getPlanet(params.id);
         setPlanet(res.data);
+        setIsLoading(false);
     }
-
 
     async function fetchPeople() {
         if (planet !== null) {
@@ -33,9 +37,11 @@ export default function PlanetAboutPage() {
         }
     }
 
+
     return (
         <div>
             <div>
+
                 <h3>{planet?.name}</h3>
                 <p>Climate: {planet?.climate}</p>
                 <p>Diameter: {planet?.diameter}</p>
@@ -43,11 +49,8 @@ export default function PlanetAboutPage() {
                 <p>Terrain: {planet?.terrain}</p>
                 <p>Population: {planet?.population}</p>
                 <p>Population: {planet?.residents?.length}</p>
-
-                {people.map(p =>
-                    <p>{p.name}</p>
-                )}
-
+                <br/>
+                <PeopleList people={people}/>
             </div>
         </div>
     );

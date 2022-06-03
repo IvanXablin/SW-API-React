@@ -2,6 +2,7 @@ import React from 'react';
 import {IPlanet} from "../../../types/IPlanet";
 import styles from './PlanetItem.module.css';
 import {useNavigate} from "react-router-dom";
+
 interface PlanetItemProps {
     planet: IPlanet;
 }

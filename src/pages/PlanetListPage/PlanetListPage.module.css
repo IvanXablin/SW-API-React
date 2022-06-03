@@ -1,0 +1,22 @@
+.header {
+    font-size: 40px;
+    text-align: center;
+}
+
+.contentPage {
+    width: 23%;
+    margin-left: auto;
+}
+
+.bntPage {
+    font-size: 24px;
+    margin-left: 10px;
+    background: transparent;
+    color: white;
+    border: 1px solid yellow;
+}
+
+.bntPage__current {
+    font-size: 26px;
+    margin-left: 10px;
+}

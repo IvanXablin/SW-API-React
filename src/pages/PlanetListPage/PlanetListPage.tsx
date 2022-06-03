@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {IPlanet} from "../../../types/IPlanet";
-import AxiosService from "../../../api/AxiosService";
-import {getPagesArray, getPagesCount} from "../../../utils/pages";
-import PlanetList from "../../Planet/PlanetList/PlanetList";
+import {IPlanet} from "../../types/IPlanet";
+import AxiosService from "../../api/AxiosService";
+import {getPagesArray, getPagesCount} from "../../utils/pages";
+import PlanetList from "../../components/Planet/PlanetList/PlanetList";
 import styles from "./PlanetListPage.module.css"
+import Loader from "../../components/Loader/Loader";
 
 export default function PlanetListPage() {
 
@@ -32,20 +33,20 @@ export default function PlanetListPage() {
     }
 
     return (
-        <div className="App">
+        <div>
             <h1 className={styles.header}>Star Wars Planet Info</h1>
 
-            <div style={{textAlign: 'right'}}>
-                {pagesArray.map(page =>
+            <div className={styles.contentPage}>
+                {pagesArray.map(p =>
                     <button
-                        style={{fontSize: '24px', marginLeft: '10px'}}
-                        key={page}
-                        onClick={() => changePage(page)}
-                    >{page}</button>
+                        className={page === p ? styles.bntPage__current : styles.bntPage}
+                        key={p}
+                        onClick={() => changePage(p)}
+                    >{p}</button>
                 )}
             </div>
 
-            {isLoading ? <img src={require('../../../assets/load.gif')} alt="loading..." className={styles.loader}/> : <PlanetList arrayPlanets={planets}/>}
+            {isLoading ? <Loader/> : <PlanetList arrayPlanets={planets}/>}
         </div>
     );
 }

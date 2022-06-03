@@ -1,7 +1,7 @@
-import PlanetListPage from "./components/Pages/PlanetListPage/PlanetListPage";
+import PlanetListPage from "./pages/PlanetListPage/PlanetListPage";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import './App.css';
-import PlanetAboutPage from "./components/Pages/PlanetAboutPage/PlanetAboutPage";
+import PlanetAboutPage from "./pages/PlanetAboutPage/PlanetAboutPage";
 
 function App() {
   return (
