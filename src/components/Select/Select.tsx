@@ -15,9 +15,9 @@ export default function Select ({filterItem, changeItem} : SelectProps)  {
         >
             <option disabled>Gender</option>
             <option key="01" value="all">All</option>
-            <option key="01" value="male">Male</option>
+            <option key="02" value="male">Male</option>
             <option key="03" value="female">Female</option>
-            <option key="02" value="n/a">N/A</option>
+            <option key="04" value="n/a">N/A</option>
         </select>
     );
 }
