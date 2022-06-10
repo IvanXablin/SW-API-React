@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {IPlanet} from "../../types/IPlanet";
 import {useParams} from "react-router-dom";
 import AxiosService from "../../api/AxiosService";
@@ -20,12 +20,22 @@ export default function PlanetAboutPage() {
     const [isPlanetLoading, setIsPlanetLoading] = useState(true);
     const [isPeopleLoading, setIsPeopleLoading] = useState(true);
     const params = useParams<PlanetItemPageParams>();
-    const as = new AxiosService();
+    
+    const fetchPeople = useCallback(async () => {
+        const as = new AxiosService();
+        if (planet !== null) {
+            const res = await as.getPeople(planet.residents);
+            setPeople(res);
+            setIsPeopleLoading(false);
+        }
+    }, [planet]);
 
-    useEffect( () => {
-        fetchPeople();
-        fetchPlanet();
-    }, [isPlanetLoading]);
+    const fetchPlanet = useCallback(async () => {
+        const as = new AxiosService();
+        const res = await as.getPlanet(params.id);
+        setPlanet(res.data);
+        setIsPlanetLoading(false);
+    }, [params.id]);
 
     const filterGenderPeople = useMemo(() => {
         fetchPeople();
@@ -36,22 +46,14 @@ export default function PlanetAboutPage() {
             return [...people].filter(p => p.gender === filterPeople)
         }
             return people;
-    }, [filterPeople, people])
+    }, [filterPeople, people, fetchPeople])
 
 
-    async function fetchPlanet() {
-        const res = await as.getPlanet(params.id);
-        setPlanet(res.data);
-        setIsPlanetLoading(false);
-    }
+    useEffect( () => {
+        fetchPeople();
+        fetchPlanet();
+    }, [isPlanetLoading, fetchPlanet, fetchPeople]);
 
-    async function fetchPeople() {
-        if (planet !== null) {
-            const res = await as.getPeople(planet.residents);
-            setPeople(res);
-            setIsPeopleLoading(false);
-        }
-    }
 
     return (
          <div className={styles.AboutPage}>
