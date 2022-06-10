@@ -11,7 +11,7 @@ function PlanetList ({arrayPlanets} : PlanetListProps) {
     return (
         <div className={styles.content}>
             {arrayPlanets.map(planet =>
-                <PlanetItem planet={planet}/>
+                <PlanetItem key={planet.name} planet={planet}/>
             )}
         </div>
     );

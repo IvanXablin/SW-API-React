@@ -11,7 +11,7 @@ export default function PeopleList({people} : PeopleListProps) {
     return (
         <div className={styles.contentPeople}>
             {people.map(p =>
-                <PeopleItem people={p}/>
+                <PeopleItem key={p.name} people={p}/>
             )}
         </div>
     );
