@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/SW-API-React/static/css/main.6b31fe43.css",
+    "main.js": "/SW-API-React/static/js/main.70454d94.js",
+    "static/media/load.gif": "/SW-API-React/static/media/load.77950dd08d6d581324a7.gif",
+    "index.html": "/SW-API-React/index.html",
+    "main.6b31fe43.css.map": "/SW-API-React/static/css/main.6b31fe43.css.map",
+    "main.70454d94.js.map": "/SW-API-React/static/js/main.70454d94.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b31fe43.css",
+    "static/js/main.70454d94.js"
+  ]
+}
