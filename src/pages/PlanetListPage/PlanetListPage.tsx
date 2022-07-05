@@ -33,9 +33,10 @@ export default function PlanetListPage() {
     }
 
     return (
-        <div>
-            <h1 className={styles.header}>Star Wars Planet Info</h1>
-
+        <div className={styles.wrapper}>
+            
+            <h1 className={styles.header}>Star Wars API</h1>
+            
             <div className={styles.contentPage}>
                 {pagesArray.map(p =>
                     <button

@@ -1,5 +1,6 @@
 .contentPeople {
-    margin: 0 auto;
+    max-width: 73%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }

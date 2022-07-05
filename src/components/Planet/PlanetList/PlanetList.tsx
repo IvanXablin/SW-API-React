@@ -9,10 +9,12 @@ interface PlanetListProps {
 
 function PlanetList ({arrayPlanets} : PlanetListProps) {
     return (
-        <div className={styles.content}>
-            {arrayPlanets.map(planet =>
-                <PlanetItem key={planet.name} planet={planet}/>
-            )}
+        <div className={styles.content__wrapper}>
+            <div className={styles.content}>
+                {arrayPlanets.map(planet =>
+                    <PlanetItem key={planet.name} planet={planet}/>
+                )}
+            </div>
         </div>
     );
 }

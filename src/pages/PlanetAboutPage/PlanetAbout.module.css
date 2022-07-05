@@ -1,14 +1,16 @@
 .AboutPage {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 .PlanetInfo {
-    width: 80%;
-    margin-bottom: 20px;
+    width: 50%;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
 }
 
 .PlanetInfo__Item {
@@ -21,11 +23,14 @@
 .PeopleInfo {
     max-width: 73%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
 .PeopleInfo__Filter {
-    align-self: flex-end;
+    display: flex;
+    justify-content: center;
 }
 
 p {
