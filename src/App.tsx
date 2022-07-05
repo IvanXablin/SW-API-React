@@ -7,8 +7,8 @@ function App() {
   return (
        <BrowserRouter>
            <Routes>
-               <Route path={'/'} element={<PlanetListPage/>}/>
-               <Route path={'/planets/:id'} element={<PlanetAboutPage/>}/>
+               <Route path={'/SW-API-React/'} element={<PlanetListPage/>}/>
+               <Route path={'/SW-API-React/planets/:id'} element={<PlanetAboutPage/>}/>
            </Routes>
        </BrowserRouter>
   );
